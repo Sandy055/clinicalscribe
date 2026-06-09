@@ -1,7 +1,7 @@
 // ============================================================================
 //  ClinicalScribe — Backend API server (Node.js + Express)
 // ----------------------------------------------------------------------------
-//  WHAT THIS FILE DOES:
+//  Summary:
 //  It starts a small web server that exposes ONE main "endpoint": /api/generate
 //  The React frontend sends raw clinical notes to this endpoint. This server
 //  then calls a third-party LLM service to turn those notes into a structured

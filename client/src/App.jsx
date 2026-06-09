@@ -3,14 +3,8 @@ import { FileText, Wand2, Loader2, AlertCircle, ClipboardList } from "lucide-rea
 
 // ClinicalScribe — turns messy, free-text clinical notes into a structured SOAP note.
 //
-// FLOW (the concept to understand for your interview):
-//   1. User types raw notes into the textarea (this lives in React "state").
-//   2. On "Generate", we send those notes to OUR backend endpoint (/api/generate).
-//   3. The backend calls the LLM and sends back structured documentation as JSON.
-//   4. We render that JSON into clean sections.
-//
 // Note: the backend runs on port 3001, the frontend on 5173 (Vite's default),
-// so we point our request at the backend's address.
+// so pointed our request at the backend's address.
 const API_BASE = "http://localhost:3001";
 
 const EXAMPLE_NOTES =
