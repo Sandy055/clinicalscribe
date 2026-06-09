@@ -7,11 +7,12 @@ import { FileText, Wand2, Loader2, AlertCircle, ClipboardList } from "lucide-rea
 // so pointed our request at the backend's address.
 const API_BASE = "http://localhost:3001";
 
-const EXAMPLE_NOTES =
-  "pt is 54yo M, came in c/o chest tightness on and off for 3 days, worse w/ exertion, " +
-  "no radiation. bp 148/92, hr 88, afebrile. hx of htn, takes lisinopril. smoker 1ppd. " +
-  "lungs clear, heart rrr no murmur. ekg ordered, troponin pending. plan: asa given, " +
-  "monitor, cards consult if trop positive, counseled on smoking cessation.";
+const EXAMPLES = [
+  "pt is 54yo M, came in c/o chest tightness on and off for 3 days, worse w/ exertion, no radiation. bp 148/92, hr 88, afebrile. hx of htn, takes lisinopril. smoker 1ppd. lungs clear, heart rrr no murmur. ekg ordered, troponin pending. plan: asa given, monitor, cards consult if trop positive, counseled on smoking cessation.",
+  "4yo F brought in by mom, fever 102 x2 days, pulling at R ear, fussy, decreased po intake. no vomiting. TMs: R bulging erythematous, L normal. throat mild erythema no exudate. lungs cl. dx acute otitis media. rx amoxicillin, tylenol prn, f/u 48h if no improvement.",
+  "22yo M, fell during soccer, twisted R ankle ~2h ago. swelling + bruising over lateral malleolus, painful wt bearing. no numbness. distal pulses intact. xray ordered r/o fx. plan: RICE, ankle brace, crutches, ibuprofen, ortho f/u if fracture.",
+  "58yo F here for routine f/u, dm2 + htn. reports fatigue, occasional blurry vision. fingerstick today 210. bp 138/86. wt up 3lb since last visit. meds metformin 1000 bid, lisinopril 10. feet: no ulcers, sensation intact. plan: increase metformin, order a1c + lipid panel, diet counseling, recheck 3mo.",
+];
 
 const SECTIONS = [
   { key: "chiefComplaint", label: "Chief Complaint" },
@@ -95,7 +96,7 @@ export default function App() {
 
           <div style={styles.actions}>
             <button
-              onClick={() => setRawNotes(EXAMPLE_NOTES)}
+              onClick={() => setRawNotes(EXAMPLES[Math.floor(Math.random() * EXAMPLES.length)])}
               style={styles.linkBtn}
               disabled={loading}
             >
